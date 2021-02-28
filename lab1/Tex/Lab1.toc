@@ -1,0 +1,5 @@
+\babel@toc {russian}{}
+\contentsline {section}{Введение}{3}{table.caption.1}%
+\contentsline {subsection}{\numberline {0.1}Реализация алгоритмов}{3}{subsection.0.1}%
+\contentsline {section}{Заключение}{6}{lstnumber.-1.50}%
+\contentsline {section}{Литература}{7}{lstnumber.-1.50}%
