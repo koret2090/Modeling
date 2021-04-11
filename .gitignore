@@ -397,3 +397,10 @@ venv.bak/
 *.exe
 *.out
 *.app
+
+# Tex
+*.aux
+*.log
+*.nlo
+*.out
+*.gz
