@@ -78,9 +78,8 @@
 	
 	\noindent
 	\makebox{\large{\bf Название:}~~~}
-	\makebox[\textwidth][l]{\large\underline{Программная реализация приближенного~~~~~~~~~~~~~~~~~~~~}}
-	\makebox[\textwidth][l]{\large\underline{аналитического метода и численных алгоритмов первого~~~~~~~~~~~~~~~~~}}
-	\makebox[\textwidth][l]{\large\underline{и второго порядков точности при решении задачи Коши для ОДУ.~~}}
+	\makebox[\textwidth][l]{\large\underline{Изучение функции распределения~~~~~~~~~~~~~~~~~~~~}}
+	\makebox[\textwidth][l]{\large\underline{ и функции плотности распределения случайных чисел.~~~~~~~~~~~~~~~~~}}
 	
 	\noindent
 	\makebox{\large{\bf Дисциплина:}~~~}
@@ -89,14 +88,14 @@
 	\vspace{1.5cm}
 	\noindent
 	\begin{tabular}{l c c c c c}
-		Студент      & ~ИУ7-65Б~               & \hspace{2.5cm} & \hspace{2cm}                 & &  Д.В. 
+		Студент      & ~ИУ7-75Б~               & \hspace{2.5cm} & \hspace{2cm}                 & &  Д.В. 
 		Сусликов \\\cline{2-2}\cline{4-4} \cline{6-6} 
 		\hspace{3cm} & {\footnotesize(Группа)} &                & {\footnotesize(Подпись, дата)} & & {\footnotesize(И.О. Фамилия)}
 	\end{tabular}
 	
 	\noindent
 	\begin{tabular}{l c c c c}
-		Преподаватель & \hspace{5cm}   & \hspace{2cm}                 & & ~~~~~~В.М. Градов~~~~~~\\\cline{3-3} \cline{5-5} 
+		Преподаватель & \hspace{5cm}   & \hspace{2cm}                 & & ~~~~~~И.В. Рудаков~~~~~~\\\cline{3-3} \cline{5-5} 
 		\hspace{3cm}  &                & {\footnotesize(Подпись, дата)} & & {\footnotesize(И.О. Фамилия)}
 	\end{tabular}
 	
@@ -114,158 +113,157 @@
 		
 	% ВВЕДЕНИЕ
 	\clearpage
-	\section*{Введение}
-	\addcontentsline{toc}{section}{Введение}
-	\textbf{Цель работы:} Получение навыков решения задачи Коши для ОДУ методами Пикара и
-	явными методами первого порядка точности (Эйлера) и второго порядка точности (Рунге-Кутта).\par
-	\textbf{Исходные данные:}
-	\par ОДУ, не имеющее аналитического решения\par
-		$$u'(x) = x^2 + u^2, $$
-		$$u(0) = 0 $$
-	\par
+	\section{Задание}
+	\addcontentsline{toc}{section}{Задание}
+	Требуется исследовать следующие 2 распределения:
+	\begin{itemize}
+		\item[1)] равномерное распределение;
+		\item[2)] распределение Пуассона.
+	\end{itemize}
+	Для данных распределений построить графики функций распределений и функций плотности распределения случайных чисел. 
+	\newpage
 	
-	\textbf{Результат работы программы}
-	\par Таблица, содержащая значения аргумента с заданным шагом в интервале [0, xmax] и
-		результаты расчета функции u(x) в приближениях Пикара (от 1-го до 4-го), а также
-		численными методами. Границу интервала xmax выбирать максимально возможной из
-		условия, чтобы численные методы обеспечивали точность вычисления решения уравнения
-		u(x) до второго знака после запятой. 
-	\par
- 
-	\begin{enumerate}
-		\item \textbf{Метод Пикара}
-		
-		$y^{(1)}=\frac{x^3}{3}\\$
-		$y^{(2)}=\frac{x^3}{3} + \frac{x^7}{63}\\$
-		$y^{(3)}=\frac{x^3}{3}+ \frac{x^7}{63} + \frac{2x^{11}}{2079} + \frac{x^{15}}{59535}\\$	
-		$y^{(4)}=\frac{x^3}{3}+ \frac{x^7}{63} + \frac{2x^{11}}{2079} + \frac{13x^{15}}{218295} + \frac{82x^{19}}{37328445} +  \frac{662x^{23}}{10438212015}+\\ \frac{4x^{27}}{3341878155}+\frac{x^{31}}{109876902975}$
-		
-		\item \textbf{Метод Эйлера}\par
-		$y_{n+1}=y_n+h\cdot f(x_n,y_n)\text{ , где }f(x,y)=x^2+y^2$
-		
-		\newpage
-		\item \textbf{Метод Рунге-Кутта}\par
-		$y_{n+1}=y_n+h\cdot((1 - \alpha)k_1 + \alpha k_2), где\\
-		k_1 = f(x_n, y_n)\\
-		k_2 = f(x_n + \frac{h}{2 \alpha}, y_n + \frac{h}{2 \alpha}k_1),\\
-		\alpha = \frac{1}{2} \text{ or } 1$
-			
-	\end{enumerate}
 	
-	\textbf{Результаты}\par
-	Ниже приведены результаты расчёта функции u(x) с шагом  $10^{-5}$
-	и значением $\alpha$ = 1 в методе Рунге-Кутта.
+	\section{Задание}
+	\addcontentsline{toc}{section}{Теория}
 	
-	\begin{figure}[h!]
-		\centering{\includegraphics[scale=0.7]{res.jpg}}
+	\textbf{Равномерное распределение }
+		
+	Функция распределения:
+	
+	\begin{equation*}
+		F_X(x) \equiv P(X \le x) = \left\{
+		\begin{matrix}
+			0, & x < a \\
+			\dfrac{x-a}{b-a}, & a \le x < b \\
+			1, & x \ge b
+		\end{matrix}
+		\right.
+	\end{equation*}
+
+	Плотность распределения:
+	
+	\begin{equation*}
+		f_X(x) = \left\{
+		\begin{matrix}
+			{1 \over b-a}, & x\in [a,b] \\
+			0, & x\not\in [a,b]
+		\end{matrix}
+		\right.
+	\end{equation*}
+	
+	
+	\textbf{Пуассоновское распределение}
+	
+	Функция распределения:
+	
+	\begin{equation*}
+		F(x) =  \frac{\Gamma(|k + 1), \mu)}{|k|!}
+	\end{equation*}
+
+	Плотность распределения:
+	
+	\begin{equation*}
+		f(x) = \frac{\mu^{k}}{k!} e^{-\mu} 
+	\end{equation*}	
+	\newpage
+	
+	\section{Результаты работы}
+	\addcontentsline{toc}{section}{Задание}
+	
+	\begin{figure}[h]
+		\centering{\includegraphics[scale=0.8]{source/1.png}}
+		\centering\caption{График функции распределения и плотности распределения равномерной случайной величины при a = -5, b = 5}
 	\end{figure}
 	
 	\newpage
 	
+	\begin{figure}[h]
+		\centering{\includegraphics[scale=0.8]{source/11.png}}
+		\centering\caption{График функции распределения и плотности распределения равномерной случайной величины при a = 0, b = 5}
+	\end{figure}
 	
-	\section*{Ответы на вопросы}
-	\begin{enumerate}
-		\item[1)] \textbf{Вопрос:} Укажите интервалы значений аргумента, в которых можно считать решением заданного уравнения каждое из первых 4-х приближений Пикара. Точность результата оценивать до
-		второй цифры после запятой. Объяснить свой ответ.
-			
-		\textbf{Ответ:} При оценке значений до 2-й цифры после запятой общим интервалом, где совпадают значения у всех приближений Пикара, будет [0, 65]. Если оценивать по отдельности, то для 1-го - [0, 65], 
-		для 2-го - [0, 1.05], для 3-го - [0, 1.4], для 4-го - [0, 1.4].
-			
-		Интервалы для 3-его и 4-ого приближения одинаковые из-за того, что
-		нельзя гарантировать, что 4-ое приближение вычисляется правильно, так как для этого
-		нужно приближение более высокого порядка.
-		
-		Интервалы разнятся, так как чем больше приближение, тем точнее результат.
-		
-		\item[2)] \textbf{Вопрос:} Пояснить, каким образом можно доказать правильность полученного результата при
-		фиксированном значении аргумента в численных методах.
-		
-		\textbf{Ответ:} Численные методы работают пошагово, поэтому точность полученного результата зависит от величины шага. То есть, чтобы доказать правильность результата нужно вычислять значения сперва с большим шагом, постепенно уменьшая его, до тех пор, пока изменение результата будет пренебрежительно мало. Итоговый результат можно считать верным. Приведу пример вычисления значения u(2):
-		\par
-		\begin{table}[h]
-			\begin{tabular}{|l|l|l|}\hline
-				шаг    & Метод Эйлера  & Метод Рунге\\ \hline
-				$10^{-2}$ & 36.49  & 575.95 \\
-				$10^{-3}$ & 142.63  & 420.29 \\
-				$10^{-4}$ & 277/36  & 327.89 \\
-				$10^{-5}$ & 313.04  & 318.73 \\
-				$10^{-6}$ & 317.25  & 317.82 \\
-				\hline     
-			\end{tabular}
-		\end{table}
-		
-		
-		\newpage
-		\item[3)] \textbf{Вопрос:} Каково значение функции при x=2, т.е. привести значение u(2).
-		\textbf{Ответ:} 
-		\par
-		\begin{table}[h]
-			\begin{tabular}{|l|l|l|}\hline
-				x    & Метод  & Метод \\
-				& Эйлера  & Рунге \\ \hline
-				2.00 & 317.25  & 317.82 \\
-				\hline     
-			\end{tabular}
-		\end{table}
-	\end{enumerate}
-	
-	\textbf{Код программы}
-
-	\begin{lstlisting}[caption=Метод Эйлера]
-		def euler(h, x):
-			y = 0
-			x0 = h
-			while (x0 < x + h / 2):
-			try:
-				y += h * func(x0, y)
-				x0 += h
-			except:
-				return 'null'
-		
-			return y
-	\end{lstlisting}
-
-
-	\begin{lstlisting}[caption=Метод Рунге-Кутта]
-		def runge(h, x):
-			alpha = 1
-			y = 0
-			x0 = h
-			while (x0 < x + h / 2):
-			try:
-				k1 = func(x0, y)
-				k2 = func(x0 + h / 2 / alpha, y + h / 2 / alpha * k1)
-				y += h * ((1 - alpha) * k1 + alpha * k2)
-				x0 += h
-			except:
-				return 'null'
-			
-			return y
-	\end{lstlisting}
-
-	\begin{lstlisting}[caption=Метод Пикара]
-		def approximation1(arg):
-			return arg ** 3 / 3
-		
-		def approximation2(arg):
-			return approximation1(arg) + arg ** 7 / 63
-		
-		def approximation3(arg):
-			return approximation2(arg) + (arg ** 11) * (2 / 2079) + (arg ** 15) / 59535
-		
-		def approximation4(arg):
-			return approximation3(arg) + (arg ** 15)*(2 / 93555) + (arg ** 19)*(2 / 3393495) + \
-			(arg ** 19)*(2 / 2488563) + (arg ** 23)*(2 / 86266215) + (arg ** 23)*(1 / 99411543) + \
-			(arg ** 27)*(2 / 3341878155) + (arg ** 31)*(1 / 109876902975)
-		
-		def picar(x):
-			y_approx1 = approximation1(x)
-			y_approx2 = approximation2(x)
-			y_approx3 = approximation3(x)
-			y_approx4 = approximation4(x)
-		
-			return [y_approx1, y_approx2, y_approx3, y_approx4]
-	\end{lstlisting}
 	\newpage
 	
+	\begin{figure}[h]
+		\centering{\includegraphics[scale=0.8]{source/2.png}}
+		\centering\caption{График функции распределения и плотности распределения Пуассона при $\mu$ = 10 в интервале от -1 до 20}
+	\end{figure}
+	
+	\newpage
+	
+	\begin{figure}[h]
+		\centering{\includegraphics[scale=0.8]{source/22.png}}
+		\centering\caption{График функции распределения и плотности распределения Пуассона при $\mu$ = 5 в интервале от -1 до 20}
+	\end{figure}
+
+	
+	
+	\newpage
+	\textbf{Текст программы}
+	\begin{lstlisting}
+		import matplotlib.pyplot as plt
+		from scipy.stats import poisson
+		import numpy as np
+		
+		def uniform_distribution(a, b, x):
+			if (x < a):
+				return 0
+			elif (x >= b):
+				return 1
+			else:
+				return (x - a) / (b - a)
+		
+		def uniform_density(a, b, x):
+			if (a <= x <= b):
+				return 1 / (b - a)
+			else:
+				return 0
+		
+		
+		def poisson_distribution(x, mu):
+			return poisson(mu).cdf(x)
+		
+		
+		def poisson_density(x, mu):
+			return poisson(mu).pmf(x)
+		
+		def draw_graphs(x, y_distribution, y_density, name):
+			fig, axs = plt.subplots(2, figsize=(8, 6))
+			
+			fig.suptitle(name)
+			axs[0].plot(x, y_distribution, color='blue')
+			axs[1].plot(x, y_density, color='green')
+			
+			axs[0].set_xlabel('x')
+			axs[0].set_ylabel('F(x)')
+			
+			axs[1].set_xlabel('x')
+			axs[1].set_ylabel('f(x)')
+			
+			axs[0].grid(True)
+			axs[1].grid(True)
+			plt.show()
+		
+		def main():
+			a = float(input("Input a: "))
+			b = float(input("Input b: "))
+			
+			delta = b - a
+			x = np.arange(a - delta / 2, b + delta / 2, 0.001)
+			
+			y_distribution = [uniform_distribution(a, b, _x) for _x in x]
+			y_density = [uniform_density(a, b, _x) for _x in x]
+			draw_graphs(x, y_distribution, y_density)
+			
+			mu = float(input("Input mu: "))    
+			x = np.arange(-1, 20)
+			y_distribution = poisson_distribution(x, mu)
+			y_density = poisson_density(x, mu)
+		
+			draw_graphs(x, y_distribution, y_density)
+		
+		if __name__ == '__main__':
+			main()
+	\end{lstlisting}	
 \end{document}
