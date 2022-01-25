@@ -1,0 +1,6 @@
+\babel@toc {russian}{}
+\contentsline {section}{Задание}{3}{table.caption.1}%
+\contentsline {section}{Аналитическая часть}{5}{figure.caption.2}%
+\contentsline {section}{Примеры}{6}{figure.caption.2}%
+\contentsline {section}{Вывод}{6}{figure.caption.5}%
+\contentsline {section}{Листинги}{7}{figure.caption.5}%
